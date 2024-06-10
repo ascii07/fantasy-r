@@ -1,3 +1,5 @@
+/* src/Pages/Home.css */
+
 /* General container styling */
 .home-container {
     display: flex;
@@ -7,87 +9,134 @@
     padding: 20px;
     background: #ffffff;
     min-height: 100vh;
-}
+  }
   
-/* Common section styling */
-section {
+  /* Common section styling */
+  section {
     width: 100%;
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     margin-bottom: 20px;
     background: #ffffff;
-}
+  }
   
-/* Hero section styling */
-.hero-section {
+  /* Popup styling */
+  .popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .popup-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+  
+  .popup h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+  }
+  
+  .popup p {
+    font-size: 1.2em;
+  }
+  
+  .close-popup-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 1em;
+  }
+  
+  .close-popup-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Hero section styling */
+  .hero-section {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     background: linear-gradient(to right, #43c6ac, #191654);
-}
+  }
   
-.hero-content {
+  .hero-content {
     flex: 1;
     text-align: left;
     color: #fff;
     margin-left: 30px;
-}
+  }
   
-.hero-section h1 {
+  .hero-section h1 {
     font-size: 2.5em;
     color: #fff;
     margin-bottom: 20px;
-}
+  }
   
-.sub-text {
+  .sub-text {
     font-size: 1.2em;
     color: #ffae00;
     margin-bottom: 20px;
-}
+  }
   
-.download-icon {
+  .download-icon {
     font-size: 3em;
     color: #ffae00;
     margin: 20px 0;
-}
+  }
   
-.description {
+  .description {
     font-size: 1.1em;
     color: #ddd;
     margin: 20px 0;
-}
+  }
   
-/* Input section styling */
-.input-section {
+  /* Input section styling */
+  .input-section {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     margin: 20px 0;
-}
+  }
   
-.input-section input[type="text"] {
+  .input-section input[type="text"] {
     padding: 10px;
     width: 100%;
     max-width: 300px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-}
+  }
   
-.privacy-policy {
+  .privacy-policy {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
     font-size: 0.9em;
-}
+  }
   
-.privacy-policy input[type="checkbox"] {
+  .privacy-policy input[type="checkbox"] {
     margin-right: 5px;
-}
+  }
   
-.get-app-button {
+  .get-app-button {
     padding: 10px 20px;
     font-size: 1em;
     color: #fff;
@@ -97,121 +146,167 @@ section {
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-top: 10px;
-}
+  }
   
-.get-app-button:hover {
+  .get-app-button:hover {
     background-color: #cc8f00;
-}
+  }
   
-/* Image styling */
-.hero-image-container {
+  /* Image styling */
+  .hero-image-container {
     flex: 1;
     text-align: right;
-}
+  }
   
-.hero-image {
+  .hero-image {
     max-width: 80%;
     height: auto;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     margin-top: 20px;
-}
+  }
   
-/* Features section styling */
-.features-section {
+  /* About DFS section styling */
+  .about-dfs-section {
     text-align: center;
-}
+    background-color: #f7f7f7;
+  }
   
-.features-section h2 {
+  .about-dfs-section h2 {
     font-size: 2em;
     color: #333;
     margin-bottom: 20px;
-}
+  }
   
-.features {
+  .dfs-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+  }
+  
+  .dfs-text {
+    max-width: 800px;
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  
+  .dfs-text h3 {
+    font-size: 1.5em;
+    color: #540082;
+    margin-bottom: 10px;
+  }
+  
+  .dfs-text p,
+  .dfs-text ul {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .dfs-text ul {
+    padding-left: 20px;
+  }
+  
+  .dfs-text ul li {
+    list-style-type: disc;
+  }
+  
+  /* Features section styling */
+  .features-section {
+    text-align: center;
+  }
+  
+  .features-section h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .features {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-}
+  }
   
-.feature {
+  .feature {
     text-align: center;
     max-width: 200px;
     margin: 20px;
-}
+  }
   
-.feature i {
+  .feature i {
     font-size: 2em;
     color: #ffae00;
     margin-bottom: 10px;
-}
+  }
   
-.feature h3 {
+  .feature h3 {
     font-size: 1.2em;
     color: #333;
     margin-bottom: 10px;
-}
+  }
   
-.feature p {
+  .feature p {
     font-size: 1em;
     color: #555;
-}
+  }
   
-/* Testimonials section styling */
-.testimonials-section {
+  /* Testimonials section styling */
+  .testimonials-section {
     text-align: center;
-}
+  }
   
-.testimonials-section h2 {
+  .testimonials-section h2 {
     font-size: 2em;
     color: #333;
     margin-bottom: 20px;
-}
+  }
   
-.testimonials {
+  .testimonials {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-}
+  }
   
-.testimonial {
+  .testimonial {
     max-width: 300px;
     margin: 20px;
     padding: 20px;
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+  }
   
-.testimonial p {
+  .testimonial p {
     font-size: 1em;
     color: #555;
     margin-bottom: 10px;
-}
+  }
   
-.testimonial h4 {
+  .testimonial h4 {
     font-size: 1em;
     color: #007bff;
-}
+  }
   
-/* Call-to-action section styling */
-.call-to-action-section {
+  /* Call-to-action section styling */
+  .call-to-action-section {
     text-align: center;
-}
+  }
   
-.call-to-action-section h2 {
+  .call-to-action-section h2 {
     font-size: 2em;
     color: #333;
     margin-bottom: 20px;
-}
+  }
   
-.call-to-action-section p {
+  .call-to-action-section p {
     font-size: 1.2em;
     color: #333;
     margin-bottom: 20px;
-}
+  }
   
-.cta-button {
+  .cta-button {
     padding: 10px 20px;
     font-size: 1em;
     color: #fff;
@@ -220,13 +315,13 @@ section {
     border-radius: 25px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-}
+  }
   
-.cta-button:hover {
+  .cta-button:hover {
     background-color: #0056b3;
-}
+  }
   
-.download-now-button {
+  .download-now-button {
     background-color: #28a745;
     color: white;
     font-weight: bold;
@@ -234,32 +329,32 @@ section {
     border-radius: 25px;
     font-size: 1.2em;
     transition: background-color 0.3s, transform 0.3s;
-}
+  }
   
-.download-now-button:hover {
+  .download-now-button:hover {
     background-color: #218838;
     transform: translateY(-2px);
-}
+  }
   
-/* How to Play section styling */
-.how-to-play-section {
+  /* How to Play section styling */
+  .how-to-play-section {
     text-align: center;
     background-color: #f7f7f7;
-}
-
-.how-to-play-section h2 {
+  }
+  
+  .how-to-play-section h2 {
     font-size: 2em;
     color: #333;
     margin-bottom: 20px;
-}
-
-.steps {
+  }
+  
+  .steps {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-}
-
-.step {
+  }
+  
+  .step {
     max-width: 45%;
     min-width: 200px;
     margin: 20px;
@@ -268,38 +363,38 @@ section {
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.step h3 {
+  }
+  
+  .step h3 {
     font-size: 1.2em;
     color: #333;
     margin-bottom: 10px;
-}
-
-.step p {
+  }
+  
+  .step p {
     font-size: 1em;
     color: #555;
-}
-
-/* FAQ section styling */
-.faq-section {
+  }
+  
+  /* FAQ section styling */
+  .faq-section {
     text-align: center;
     background-color: #f7f7f7;
-}
-
-.faq-section h2 {
+  }
+  
+  .faq-section h2 {
     font-size: 2em;
     color: #333;
     margin-bottom: 20px;
-}
-
-.faqs {
+  }
+  
+  .faqs {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-}
-
-.faq {
+  }
+  
+  .faq {
     max-width: 45%;
     min-width: 200px;
     margin: 20px;
@@ -308,85 +403,87 @@ section {
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.faq h3 {
+  }
+  
+  .faq h3 {
     font-size: 1.2em;
     color: #333;
     margin-bottom: 10px;
-}
-
-.faq p {
+  }
+  
+  .faq p {
     font-size: 1em;
     color: #555;
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
     .hero-section {
-        flex-direction: column;
-        text-align: center;
+      flex-direction: column;
+      text-align: center;
     }
   
     .hero-image-container {
-        text-align: center;
+      text-align: center;
     }
   
     .hero-image {
-        max-width: 100%;
-        margin-top: 20px;
+      max-width: 100%;
+      margin-top: 20px;
     }
   
     .features {
-        flex-direction: column;
+      flex-direction: column;
     }
   
     .feature {
-        max-width: 100%;
+      max-width: 100%;
     }
   
     .testimonials {
-        flex-direction: column;
+      flex-direction: column;
     }
   
     .testimonial {
-        max-width: 100%;
+      max-width: 100%;
     }
-
+  
     .steps,
     .faqs {
-        flex-direction: column;
+      flex-direction: column;
     }
-
+  
     .step,
     .faq {
-        max-width: 100%;
+      max-width: 100%;
     }
-}
+  }
   
-@media (max-width: 480px) {
+  @media (max-width: 480px) {
     .hero-section h1 {
-        font-size: 1.8em;
+      font-size: 1.8em;
     }
   
     .description {
-        font-size: 0.9em;
+      font-size: 0.9em;
     }
   
     .features-section h2,
     .testimonials-section h2,
     .call-to-action-section h2,
     .how-to-play-section h2,
-    .faq-section h2 {
-        font-size: 1.8em;
+    .faq-section h2,
+    .about-dfs-section h2 {
+      font-size: 1.8em;
     }
   
     .call-to-action-section p {
-        font-size: 1em;
+      font-size: 1em;
     }
   
     .cta-button {
-        font-size: 0.9em;
-        padding: 8px 16px;
+      font-size: 0.9em;
+      padding: 8px 16px;
     }
-}
+  }
+  

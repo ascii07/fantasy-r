@@ -1,26 +1,51 @@
-import React from 'react';
+// src/Pages/Home.jsx
+
+import React, { useState, useEffect } from 'react';
 import './Home.css';
 import genPro2 from '../Assets/image/genpro2.png';
 
 const HomePage = () => {
-  // Function to handle "GET APP LINK" button click
+  const [showPopup, setShowPopup] = useState(false);
+
+  useEffect(() => {
+    // Check session storage to see if the pop-up has been shown
+    const hasSeenPopup = sessionStorage.getItem('hasSeenPopup');
+    if (!hasSeenPopup) {
+      setShowPopup(true);
+    }
+  }, []);
+
   const handleGetAppLink = () => {
     const mobileNumber = document.querySelector('.input-section input').value;
     if (mobileNumber && mobileNumber.startsWith('+91')) {
       alert(`A download link will be sent to ${mobileNumber}`);
-      // Here you would typically call an API to send the link
     } else {
       alert('Please enter a valid mobile number starting with +91');
     }
   };
 
-  // Function to handle "Download Now" button click
   const handleDownloadNow = () => {
-    window.location.href = 'https://example.com/download-gen-pro-app'; // Replace with your actual download URL
+    window.location.href = '../Assets/image/r.apk'; // Replace with your actual download URL
+  };
+
+  const closePopup = () => {
+    setShowPopup(false);
+    // Set session storage to indicate the pop-up has been shown
+    sessionStorage.setItem('hasSeenPopup', 'true');
   };
 
   return (
     <div className="home-container">
+      {showPopup && (
+        <div className="popup">
+          <div className="popup-content">
+            <h3>Notice</h3>
+            <p>This game is for users 18+ only in India.</p>
+            <button className="close-popup-button" onClick={closePopup}>I Understand</button>
+          </div>
+        </div>
+      )}
+
       <section className="hero-section">
         <div className="hero-content">
           <h1>GEN PRO - IS THE BEST FANTASY GAME IN INDIA</h1>
@@ -36,12 +61,39 @@ const HomePage = () => {
             <div className="privacy-policy">
               <input type="checkbox" />
               <label>I accept Privacy policy</label>
+              <input type="checkbox" />
+              <label>I am 18+</label>
             </div>
             <button className="get-app-button" onClick={handleGetAppLink}>GET APP LINK</button>
           </div>
         </div>
         <div className="hero-image-container">
           <img src={genPro2} alt="Gen Pro App Screenshot" className="hero-image" />
+        </div>
+      </section>
+
+      <section className="about-dfs-section">
+        <h2>About GEN PRO Fantasy Sports</h2>
+        <div className="dfs-details">
+          <div className="dfs-text">
+            <h3>What is GEN PRO Fantasy Sport?</h3>
+            <p>GEN PRO  Fantasy Sports is a quick and exciting way to play fantasy sports. Unlike traditional fantasy leagues that span an entire season, DFS contests last for just one day or one week. Players draft virtual teams of real-life athletes and compete based on their performance in real games.</p>
+            
+            <h3>Types of Contests</h3>
+            <p>Our platform offers a variety of DFS contests, including:</p>
+            <ul>
+              <li>Head-to-Head: Compete against a single opponent. The player with the higher score wins the prize.</li>
+              <li>50/50s and Double-Ups: Finish in the top half of the contest participants to win double your entry fee.</li>
+              <li>Tournaments: Compete in larger fields for big prizes. Only the top scorers win, and payouts are often tiered.</li>
+              <li>Multipliers: Win multiple times your entry fee if you finish in the top percentage.</li>
+              <li>Leagues: Join smaller contests with friends or other users, usually with fewer participants and more predictable outcomes.</li>
+              <li>Qualifiers: Win entry into larger, often high-stakes contests by performing well in these preliminary contests.</li>
+            </ul>
+            <h3>Entry Fees and Prizes</h3>
+            <p>Some contests are free, while others require an entry fee. Prizes vary depending on the contest type and entry fee. Check the contest details for more information.</p>
+            <h3>Example Gameplay</h3>
+            <p>Imagine you join a football DFS contest. You select a squad of players from various teams playing that day, ensuring you stay within the salary cap. As the matches progress, your team accumulates points for goals, assists, clean sheets, and other actions. You can track your progress live and see how you compare to other participants. If your team finishes high enough, you win a share of the prize pool.</p>
+          </div>
         </div>
       </section>
 
