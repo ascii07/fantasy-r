@@ -83,7 +83,51 @@ const HomePage = () => {
       <section className="call-to-action-section">
         <h2>Join the GEN PRO Community Today!</h2>
         <p>Download the app now and start your fantasy sports journey.</p>
-        <button className="cta-button" onClick={handleDownloadNow}>Download Now</button>
+        <button className="cta-button download-now-button" onClick={handleDownloadNow}>Download Now</button>
+      </section>
+
+      <section className="how-to-play-section">
+        <h2>How to Play</h2>
+        <div className="steps">
+          <div className="step">
+            <h3>Step 1: Download the App</h3>
+            <p>Get the GEN PRO app from the app store and create your account.</p>
+          </div>
+          <div className="step">
+            <h3>Step 2: Create Your Team</h3>
+            <p>Select players from upcoming matches and create your fantasy team.</p>
+          </div>
+          <div className="step">
+            <h3>Step 3: Join Contests</h3>
+            <p>Enter your team in various contests and compete to win prizes.</p>
+          </div>
+          <div className="step">
+            <h3>Step 4: Follow Live Scores</h3>
+            <p>Track your team's performance with live updates and scores.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div className="faqs">
+          <div className="faq">
+            <h3>What is GEN PRO?</h3>
+            <p>GEN PRO is a fantasy sports app where you can create your own teams and compete against others to win prizes.</p>
+          </div>
+          <div className="faq">
+            <h3>How do I join a contest?</h3>
+            <p>Once you've created your team, navigate to the "Contests" section and choose a contest to join.</p>
+          </div>
+          <div className="faq">
+            <h3>Is there a fee to join contests?</h3>
+            <p>Some contests are free to join, while others may require an entry fee. Check the contest details for more information.</p>
+          </div>
+          <div className="faq">
+            <h3>How can I withdraw my winnings?</h3>
+            <p>Go to the "Wallet" section of the app and follow the instructions to withdraw your winnings.</p>
+          </div>
+        </div>
       </section>
     </div>
   );

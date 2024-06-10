@@ -8,6 +8,8 @@ import FAQ from './Pages/Contact';
 import UserSays from './Pages/Usersays';
 import PrivacyPolicy from './Pages/privacy_policy';
 import Disclamier from './Pages/Disclamier';
+
+
 import TermsAndCondition from './Pages/TermsAndCondition';
 
 
@@ -19,6 +21,10 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        
+        
+        
+        
         
         <Route path="/Howtoplay" element={<HowToPlay />} />
         <Route path="/faqs" element={<FAQ />} />

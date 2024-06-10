@@ -11,11 +11,11 @@ const Footer = () => {
             <p>GEN PRO is a fantasy sports game that exceeds all expectations</p>
           </div>
           <div className="footer-nav">
-            <a href="/home">HOME</a>
+            <a href="/">HOME</a>
           
-            <a href="/HowToplay">FEATURES</a>
+            <a href="/Howtoplay">FEATURES</a>
             <a href="/faqs">CONTACT</a>
-            <a href="/userssay">USERS SAY</a>
+            <a href="/user-says">USERS </a>
             <a href="/TermsAndCondition">Terms And Condition</a>
             <a href="/privacy_policy">Privacy Policy</a>
             <a href="/Disclamier">Disclaimer</a>
