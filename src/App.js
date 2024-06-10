@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import Navbar from './Components/Navbar/Navbar';
+import Home from './Pages/Home';
 
-function App() {
+import HowToPlay from './Pages/Howtoplay';
+import FAQ from './Pages/Contact';
+import UserSays from './Pages/Usersays';
+import PrivacyPolicy from './Pages/privacy_policy';
+import Disclamier from './Pages/Disclamier';
+import TermsAndCondition from './Pages/TermsAndCondition';
+
+
+import Footer from './Components/Footer/Footer';
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        
+        <Route path="/Howtoplay" element={<HowToPlay />} />
+        <Route path="/faqs" element={<FAQ />} />
+        <Route path="/user-says" element={<UserSays />} />
+        <Route path="/privacy_policy" element={<PrivacyPolicy />} />
+        <Route path="/Disclamier" element={<Disclamier />} />
+        <Route path="/TermsAndCondition" element={<TermsAndCondition />} />
+
+      </Routes>
+      <Footer />
     </div>
   );
-}
+};
 
 export default App;
