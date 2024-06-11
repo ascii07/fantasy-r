@@ -1,5 +1,11 @@
 import React from 'react';
 import './Footer.css';
+import rupay from "../../Assets/image/rupay.jpeg"
+import master from "../../Assets/image/master.jpeg"
+import visa from "../../Assets/image/visa.jpeg"
+import american from "../../Assets/image/american.jpeg"
+import paytm from "../../Assets/image/paytm.jpeg"
+
 
 const Footer = () => {
   return (
@@ -31,13 +37,12 @@ const Footer = () => {
         </div>
         <div className="footer-right">
           <div className="footer-payment">
-            <img src="https://via.placeholder.com/50x30.png?text=RuPay" alt="RuPay" />
-            <img src="https://via.placeholder.com/50x30.png?text=MasterCard" alt="MasterCard" />
-            <img src="https://via.placeholder.com/50x30.png?text=Diners+Club" alt="Diners Club" />
-            <img src="https://via.placeholder.com/50x30.png?text=AMEX" alt="AMEX" />
-            <img src="https://via.placeholder.com/50x30.png?text=Paytm" alt="Paytm" />
-            <img src="https://via.placeholder.com/50x30.png?text=Maestro" alt="Maestro" />
-            <img src="https://via.placeholder.com/50x30.png?text=PayU" alt="PayU" />
+            <img src={rupay} alt="RuPay" />
+            <img src={master} alt="MasterCard" />
+            <img src={visa} alt="Diners Club" />
+            <img src={american} alt="AMEX" />
+            <img src={paytm} alt="Paytm" />
+           
           </div>
         </div>
       </div>

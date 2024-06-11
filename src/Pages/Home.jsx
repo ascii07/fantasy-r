@@ -1,18 +1,32 @@
-// src/Pages/Home.jsx
-
 import React, { useState, useEffect } from 'react';
 import './Home.css';
-import genPro2 from '../Assets/image/genpro2.png';
+import genPro2 from '../Assets/image/genpro2.png'; // Desktop image
+import mobilepro from '../Assets/image/mobilepro.gif'; // Mobile image
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 const HomePage = () => {
   const [showPopup, setShowPopup] = useState(false);
 
+  const handleWhatsAppClick = () => {
+    window.location.href = 'https://wa.link/magicwingold'; // Replace with your WhatsApp URL
+  };
+
   useEffect(() => {
-    // Check session storage to see if the pop-up has been shown
     const hasSeenPopup = sessionStorage.getItem('hasSeenPopup');
     if (!hasSeenPopup) {
       setShowPopup(true);
     }
+
+    // Lock scrolling on mobile view
+    if (window.innerWidth <= 768) {
+      document.body.style.overflow = 'hidden'; // Disable scrolling
+    }
+
+    // Clean up function to re-enable scrolling
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
   }, []);
 
   const handleGetAppLink = () => {
@@ -25,18 +39,18 @@ const HomePage = () => {
   };
 
   const handleDownloadNow = () => {
-    window.location.href = '../Assets/image/r.apk'; // Replace with your actual download URL
+    window.location.href = '../../r.apk'; // Replace with your actual download URL
   };
 
   const closePopup = () => {
     setShowPopup(false);
-    // Set session storage to indicate the pop-up has been shown
     sessionStorage.setItem('hasSeenPopup', 'true');
   };
 
   return (
     <div className="home-container">
-      {showPopup && (
+      {/* Popup for desktop only */}
+      {showPopup && window.innerWidth > 768 && (
         <div className="popup">
           <div className="popup-content">
             <h3>Notice</h3>
@@ -68,16 +82,20 @@ const HomePage = () => {
           </div>
         </div>
         <div className="hero-image-container">
-          <img src={genPro2} alt="Gen Pro App Screenshot" className="hero-image" />
+          <img src={genPro2} alt="Gen Pro App Screenshot" className="hero-image desktop-image" />
+          <a href="https://wa.link/magicwingold" target="_blank" rel="noopener noreferrer">
+            <img src={mobilepro} alt="Gen Pro App Screenshot" className="hero-image mobile-image" />
+          </a>
         </div>
       </section>
 
+      {/* Other sections will be hidden on mobile */}
       <section className="about-dfs-section">
         <h2>About GEN PRO Fantasy Sports</h2>
         <div className="dfs-details">
           <div className="dfs-text">
             <h3>What is GEN PRO Fantasy Sport?</h3>
-            <p>GEN PRO  Fantasy Sports is a quick and exciting way to play fantasy sports. Unlike traditional fantasy leagues that span an entire season, DFS contests last for just one day or one week. Players draft virtual teams of real-life athletes and compete based on their performance in real games.</p>
+            <p>GEN PRO Fantasy Sports is a quick and exciting way to play fantasy sports. Unlike traditional fantasy leagues that span an entire season, DFS contests last for just one day or one week. Players draft virtual teams of real-life athletes and compete based on their performance in real games.</p>
             
             <h3>Types of Contests</h3>
             <p>Our platform offers a variety of DFS contests, including:</p>
@@ -181,6 +199,13 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+      <div className="whatsapp-container" onClick={handleWhatsAppClick}>
+        <FontAwesomeIcon
+          icon={faWhatsapp}
+          className="whatsapp-icon"
+        />
+        <span className="whatsapp-text">Click here to connect on WhatsApp</span>
+      </div>
     </div>
   );
 };
